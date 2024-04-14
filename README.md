@@ -1,6 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Motivation:
 
-It has been slightly changed to make it possible to use an OpenAPI as SSOT for your APIs.
+- Make desing-first approach for building OpenAPIs easy (following the [recommendation](https://learn.openapis.org/best-practices.html))
+
+# Features:
+
+This is a [Next.js](https://nextjs.org/) project based on [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). What it adds based on the standard configuration (typescript, pages router), is the following:
+
+- `openapi.json` is your SSOT for your input/output
+- `npm run dev` watches `openapi.json`
+- Auto-generates types for your openapi.
+- Builds SDK Client for your OpenAPI.
+
+# How to use
 
 To work with this, change your functions and their IO in `openapi.json`, then run `npm run types` to re-generate your types.
 
