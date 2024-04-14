@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "types": "npx openapi-fetch-typescript ./openapi.json ./src/types.ts OpenApiTypes",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

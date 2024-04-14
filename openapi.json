@@ -1,0 +1,70 @@
+{
+  "$schema": "https://raw.githubusercontent.com/CodeFromAnywhere/ActionSchema/main/schemas/openapi.schema.json",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ActionSchema",
+    "version": "1.0",
+    "description": "ActionSchema"
+  },
+  "servers": [
+    {
+      "url": "https://actionschema.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/function/testEndpoint": {
+      "post": {
+        "summary": "This is to test to find a response and proper type validation.",
+        "operationId": "testEndpoint",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "a": { "type": "string" },
+                  "b": { "type": "number" }
+                },
+                "required": ["a"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Standard response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "StandardResponse": {
+        "type": "object",
+        "required": ["isSuccessful"],
+        "properties": {
+          "isSuccessful": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "priceCredit": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
