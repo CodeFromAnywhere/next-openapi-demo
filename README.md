@@ -8,8 +8,9 @@ This is a [Next.js](https://nextjs.org/) project based on [`create-next-app`](ht
 
 - `openapi.json` is your SSOT for your input/output
 - `npm run dev` watches `openapi.json`
-- Auto-generates types for your openapi.
+- Auto-generates types for your OpenAPI.
 - Builds SDK Client for your OpenAPI.
+- Makes it very easy to reuse your endpoints as regular functions or cli's as well.
 
 # How to use
 
@@ -28,3 +29,7 @@ export default makeEndpoint(testEndpoint);
 ```
 
 In the above example, the test endpoint is automatically typescript validated and also it can validate its input automatically, all based on your openapi spec.
+
+# Wishlist
+
+- Watch your `/api` folder and detect api paths that are available and compare that to the ones that are defined in OpenAPI. With this info, we can warn the user whether or not an API exists and should exist.
