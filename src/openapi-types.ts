@@ -46,6 +46,9 @@ export interface operations {
                 "application/json": {
                     a: string;
                     b?: number;
+                    c?: number;
+                    /** @description Dit is d. heel belangrijke info */
+                    d?: number;
                 };
             };
         };

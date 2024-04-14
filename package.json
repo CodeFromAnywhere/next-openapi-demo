@@ -2,26 +2,34 @@
   "name": "next-openapi-demo",
   "version": "0.1.0",
   "private": true,
+  "watch": {
+    "types": "public/openapi.json"
+  },
   "scripts": {
-    "types": "npx openapi-fetch-typescript ./openapi.json ./src/types.ts OpenApiTypes",
-    "dev": "next dev",
+    "types": "npx openapi-fetch-typescript ./public/openapi.json ./src/openapi-types.ts OpenApiTypes",
+    "watch-types": "nodemon --watch public/openapi.json --exec \"npm run types\"",
+    "next-dev": "next dev",
+    "dev": "concurrently \"next dev\" \"npm:watch-types\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "ajv": "^8.12.0",
+    "next": "14.2.1",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.1"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "concurrently": "^8.2.2",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.1",
+    "nodemon": "^3.1.0",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.1"
+    "typescript": "^5"
   }
 }
