@@ -44,11 +44,10 @@ export interface operations {
         requestBody: {
             content: {
                 "application/json": {
+                    /** @description Hey this is a */
                     a: string;
+                    /** @description Hey this is b */
                     b?: number;
-                    c?: number;
-                    /** @description Dit is d. heel belangrijke info */
-                    d?: number;
                 };
             };
         };

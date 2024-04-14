@@ -25,13 +25,8 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                  "a": { "type": "string" },
-                  "b": { "type": "number" },
-                  "c": { "type": "number" },
-                  "d": {
-                    "type": "number",
-                    "description": "Dit is d. heel belangrijke info"
-                  }
+                  "a": { "type": "string", "description": "Hey this is a" },
+                  "b": { "type": "number", "description": "Hey this is b" }
                 },
                 "required": ["a"]
               }
